@@ -13,6 +13,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'rubocop', '~> 0.56.0', require: false
+gem 'rubocop-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'travis'
 # Use Uglifier as compressor for JavaScript assets
