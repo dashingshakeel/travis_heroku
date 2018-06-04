@@ -1,0 +1,14 @@
+language: ruby
+cache:
+- bundler
+before_script:
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rake assets:precompile
+deploy:
+  provider: heroku
+  api_key:
+    secure: QuriPiCMDlGbL3ZkJCJF45S/tzXGqILne0mSntTSQmvof4U7sxE4XC6JQyDDaO3uCZu2tvMbz4hEdmz6G/b0pTZ4M2IGQciwYM6Z2xc5fuf35tFw+Jo4sp6t9aD0MFh3uAVynpW8KJUm4pe3Xq/LtuazTIf5NOAK6dm8C6pBxWaTsBAWrZa4ly/RzUe8NUbAmKHo+qj1Ih91WdlvcUSUt9vrh/ng6k8ktaHG/NKhZb5e45f7GgF5Qf3DqCP7W14GDLKTQblmJNxmtTW2WYUp7hUJMcYtwByOH9ZPCS5+ODRf9dNjsdob5+zA4hOUkNxSdosYFyB+yYpecwlb6VhHwRL54+0bLNp2/xKeFk+9v9wrQZC21Yx7opauEhjdujdF8RtvE3rD3Btw545A3bbq+a8kpDTdA2lNPZCjM+DGBcasy31F/dhPILB4MGG+VIVrpJ0VfLAeutoSF0vDoFTHiReRxWkrgJeTlK/Guy3OjiKF/hWaZToUjYKn+633XLq7OhX8rEswaoMfk1ZXjEBxRzNIUbbac9oT5AkLkBMzLp/G8xjsDCHf9uNOgIWjaICHL6D/xHRzPJ53XEUKUVrCe2mYnVzyC6n/SDXqmXaoHrUZ+3B7XhbGpJeGCbW0wd6+1L7sKmy0dw1sCvpP2XOOaMBJr0B7ZyFS3Zt+TDxWvfw=
+  app: test-travis
+  on:
+    repo: dashingshakeel/travis_heroku
